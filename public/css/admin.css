@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+
+}
+:root{
+    --font-color: black;
+
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.sidenav{
+    width: 300px;
+    background-image:linear-gradient(120deg, #1D89f4, #00DB78, #F7bF18, #D33131);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+
+}
+.sidenav a{
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    display: inline-block;
+    width: 100%;
+    padding: 12px 10px;
+}
+.sidenav a:hover{
+    background-color: pink;
+}
+.dropdown{
+    background-color: rgba(0, 0, 0, 0.29);
+}
+.dropdown a{
+    margin-left: 20px;
+    width: calc(100% - 20px);
+
+
+}
