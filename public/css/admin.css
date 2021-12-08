@@ -4,19 +4,63 @@
 }
 :root{
     --font-color: black;
+    --page-height: calc(100vh - 60px)
 
 }
 body{
     padding: 0;
     margin: 0;
 }
+.topnav{
+    background-image: linear-gradient(to right, white, #facdcd, lightpink, pink);
+    padding: 0 10px;
+    margin: 0;
+    height: 60px;
+    list-style-type: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-weight: 600;
+    font-size: 1.2em;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+}
+.nav_dropdown{
+    margin-right: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.topnav .dropdown.active{
+    position: absolute;
+    left: 0;
+    top:100%;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+}
+.topnav .dropdown{
+    display: none;
+}
+.topnav .dropdown a{
+    padding: 10px;
+
+}
+.topnav a{
+    text-decoration: none;
+}
+.topnav .logo{
+    font-size: 2em;
+}
 .sidenav{
-    width: 300px;
-    background-image:linear-gradient(120deg, #1D89f4, #00DB78, #F7bF18, #D33131);
+    background-image:linear-gradient(-120deg, pink,whitesmoke, white);
     list-style-type: none;
     padding: 0;
     margin: 0;
-    min-height: 100vh;
+    height: var(--page-height);
+    /*text-align: center;*/
 
 }
 .sidenav a{
@@ -29,14 +73,33 @@ body{
     padding: 12px 10px;
 }
 .sidenav a:hover{
-    background-color: pink;
+    background-color: rgba(128, 128, 128, 0.26);
 }
-.dropdown{
+.sidenav .dropdown{
     background-color: rgba(0, 0, 0, 0.29);
+    /*display: none;*/
+    height: 0;
+    overflow: hidden;
+    transition: height 1000ms ease-in-out;
 }
-.dropdown a{
+.dropdown.active{
+    /*display: block;*/
+    height: 100px;
+}
+.sidenav .dropdown a{
     margin-left: 20px;
     width: calc(100% - 20px);
-
-
+}
+.dropdown a:hover{
+    background-color: rgba(119, 136, 153, 0.37);
+}
+.content-wrapper{
+    display: grid;
+    grid-template-columns: 230px auto;
+    height: var(--page-height);
+}
+.content{
+    height: 100%;
+    overflow: auto;
+    padding: 5px 5px;
 }
