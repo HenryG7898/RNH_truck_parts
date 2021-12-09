@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Livewire\WithFileUploads;
 use App\Models\User;
 use Livewire\Component;
 
@@ -9,11 +10,15 @@ class Signup extends Component
 {
     public $first_nm;
     public $last_nm;
+    public $username;
+    public $address;
+    public $profile_image;
     public $gender;
     public $DOB;
     public $email;
     public $password;
     public $user_type;
+    use WithFileUploads;
 
     public function render()
     {
@@ -32,26 +37,32 @@ class Signup extends Component
             'password' => ['required', 'string', 'min:8'],
         ];
 
+    protected $messages = [
+        'email.required' => 'The Email Address cannot be empty.',
+        'email.email' => 'The Email Address format is not valid.',
+    ];
+
     public function register(){
 
 
             $this->validate();
 
-            User::create([
+        $this->profile_image->store('public');
+
+        User::create([
                 'first_nm' => $this->first_nm,
                 'last_nm' => $this->last_nm,
                 'username' => $this->username,
                 'address' => $this->address,
                 'DOB' => $this->DOB,
-                'profile_image' => $this->profile_image,
+                'profile_image' => $this->profile_image->store('public'),
                 'gender' => $this->gender,
                 'email' => $this->email,
                 'user_type' => 'User',
                 'password' => $this->password,
             ]);
 
-            session()->flash('success', 'Student Added Successfully');
-
+            session()->flash('success', 'You have successfully registered');
 
         }
 

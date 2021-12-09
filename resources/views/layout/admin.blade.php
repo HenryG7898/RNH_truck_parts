@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="/js/app.js"></script>
     <title>Document</title>
+    @livewireStyles
 </head>
 <body>
     <nav>
@@ -70,5 +71,6 @@
     </main>
 
     <script src="/js/scripts.js"></script>
+@livewireScripts
 </body>
 </html>

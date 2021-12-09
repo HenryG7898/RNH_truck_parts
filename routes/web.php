@@ -17,4 +17,12 @@ Route::get('/', function () {
     return view('main');
 });
 
-//Route::get
+Route::middleware(['user','auth'])->group( function (){
+
+
+});
+
+Route::middleware(['admin','auth'])->group( function (){
+
+
+});

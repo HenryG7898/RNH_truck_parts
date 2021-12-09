@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RNH</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @livewireStyles
 </head>
 <body>
 <nav class="bg-white shadow dark:bg-gray-800">
@@ -40,12 +41,8 @@
         </div>
     </div>
 </nav>
-<ul class="sidenav">
 
-</ul>
-<main class="main">
-
-</main>
 @yield('content')
+@livewireScripts
 </body>
 </html>
