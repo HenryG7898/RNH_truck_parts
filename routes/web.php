@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('User.Register');
 });
 
 Route::middleware(['user','auth'])->group( function (){

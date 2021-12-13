@@ -12,12 +12,15 @@ class Signup extends Component
     public $last_nm;
     public $username;
     public $address;
+    public $phone_nbr;
     public $profile_image;
     public $gender;
+    public $checkbox;
     public $DOB;
     public $email;
     public $password;
     public $user_type;
+
     use WithFileUploads;
 
     public function render()
@@ -47,17 +50,19 @@ class Signup extends Component
 
             $this->validate();
 
-        $this->profile_image->store('public');
+//        $this->profile_image->store('public');
 
         User::create([
                 'first_nm' => $this->first_nm,
                 'last_nm' => $this->last_nm,
                 'username' => $this->username,
                 'address' => $this->address,
+                'phone_nbr' => $this->phone_nbr,
                 'DOB' => $this->DOB,
-                'profile_image' => $this->profile_image->store('public'),
+//                'profile_image' => $this->profile_image->store('public'),
                 'gender' => $this->gender,
                 'email' => $this->email,
+                'T_&_C' => $this->checkbox,
                 'user_type' => 'User',
                 'password' => $this->password,
             ]);
